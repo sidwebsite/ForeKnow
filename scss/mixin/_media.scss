@@ -1,0 +1,11 @@
+@mixin mobile-max-1200 {
+    @media only screen and (max-width:1200px) {
+        @content
+    }
+};
+
+@mixin mobile($width) {
+    @media only screen and (max-width:$width) {
+        @content
+    }
+};

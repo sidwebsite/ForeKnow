@@ -1,0 +1,85 @@
+// text color
+@each $name, $color in $color-types {
+    .text-#{$name} {
+        color: $color;
+    }
+}
+
+// background color
+@each $name, $color in $color-types {
+    .bg-#{$name} {
+        background-color: $color;
+        color: $white;
+    }
+    
+}
+.bg-white {
+    background-color: $dark-green;
+}
+// link color
+@each $name, $color in $color-types {
+    .link-#{$name} {
+        color: $color;
+        &:hover {
+            color: darken($color, 10%);
+        }
+    }
+}
+
+// link skew color
+.link-skew-dark-green {
+    padding: 0.4rem 1.3rem;
+    position: relative;
+    color: $white;
+    @include transitionDuration(0.3s);
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $dark-green;
+        @include transformSkewX(150deg);
+        @include transitionDuration(0.3s);
+        z-index: -1;
+    }
+    &:hover {
+        top:-3px;
+        left: 3px;
+        color: $white;
+        @include transitionDuration(0.3s);
+    }
+    &:hover::before {
+        background-color: darken($dark-green, 5%);
+        box-shadow: 3px 3px 10px rgba($dar-gray,0.8);
+        @include transitionDuration(0.3s);
+    } 
+}
+
+.link-skew-white {
+    padding: 0.4rem 1.3rem;
+    position: relative;
+    color: $dark-green;
+    @include transitionDuration(0.3s);
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        @include transformSkewX(150deg);
+        @include transitionDuration(0.3s);
+        z-index: -1;
+    }
+    &:hover {
+        color: $white;
+        @include transitionDuration(0.3s);
+    }
+    &:hover::before {
+        background-color: $dark-green;
+        @include transitionDuration(0.3s);
+    } 
+}

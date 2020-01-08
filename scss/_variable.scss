@@ -1,0 +1,21 @@
+// color
+$green: #12a095;
+$dark-green: #005249;
+$orange: #fbb03b;
+$blue: #3366cc;
+$dark-blue: #001D29;
+$dar-gray: #161616;
+$gray: #808080;
+$white: #fff;
+
+$color-types:(
+    green: $green,
+    dark-green: $dark-green,
+    orange: $orange,
+    blue: $blue,
+    dark-blue: $dark-blue,
+    gray: $gray,
+    white: $white,
+)!default;
+    
+

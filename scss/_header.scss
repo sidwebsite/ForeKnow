@@ -1,0 +1,185 @@
+//
+#header {
+    background-color: $white;
+    height: 60px;
+    & .logo {
+        float: left;
+        & a {
+            height: 100%;
+            line-height: 60px;
+        }
+        & img {
+            @include transitionDuration(0.5s);
+        }
+    }
+    & #nav {    
+        float: right;   
+        & .menu {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            > li {                
+                &::before {
+                    content: '';
+                    position: absolute;        
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $green;
+                    transform-style: preserve-3d;                        
+                    @include navHover(150deg,0);
+                    @include navTransition(0.3s,ease-in-out);
+                    z-index: 1;
+                }
+                &:hover::before {       
+                    @include navHover(150deg,1);                                   
+                }
+                @include mobile-max-1200 {
+                    &::before {
+                        background-color: transparent;
+                    }
+                }
+            }
+            & li {
+                list-style: none;
+                position: relative;
+                & a {
+                    font-size: 0.8rem;
+                    white-space: nowrap;
+                    display: block;
+                    // height: 60px;
+                    line-height: 60px;
+                    color: $dark-green;
+                    padding: 0 1.2rem;
+                    text-decoration: none;
+                    @include transitionDuration(0.3s);
+                    position: relative;
+                    z-index: 2;
+                    @include mobile-max-1200 {
+                        color: $white;
+                        border-bottom: 1px solid $green;
+                    }
+                    &:hover {
+                        color: $white; 
+                        @include mobile-max-1200 {
+                            background-color: $dark-green;
+                        }     
+                    }                    
+                }                 
+            } 
+            & .sub-menu {          
+                padding-right: 15px;      
+                > .menu-dropdown::before {                    
+                    display: inline-block;
+                    content: "\f107";
+                    font-family: 'Font Awesome\ 5 Free';
+                    font-weight: 900;
+                    position: absolute;                    
+                    color: $dark-green;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;            
+                    @include mobile-max-1200 {
+                        display: inline-block;
+                        right: 15px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $white;
+                    }
+                }
+                > .menu-dropdown:hover::before {
+                    color: $white;
+                    @include transitionDuration(0.3s);
+                }
+                @include mobile-max-1200 {
+                    padding-right: 0;
+                }
+                & ul {                    
+                    display: none;
+                    box-shadow: 0 3px 10px rgba($color: $gray, $alpha: 0.3);                    
+                    position: absolute;
+                    left: -18px;
+                    background-color: $white;
+                    padding: 1rem 0;
+                    z-index: 99;
+                    & li {                        
+                        & a {
+                            display: block;
+                            height: 40px;
+                            line-height: 40px;
+                            color: $gray;
+                            &:hover {
+                                color: $green;
+                            }
+                            @include mobile-max-1200 {
+                                color: $white;
+                            }
+                        }
+                    }
+                    @include mobile-max-1200 {
+                        display: block;
+                        position: static;
+                        padding: 0;
+                        background-color: $green;
+                        overflow: hidden;
+                    }
+                }  
+                & .menu-dropdown + ul {
+                    @include mobile-max-1200 {
+                        height: 0;
+                    } 
+                }
+                & .menu-dropdown.active {
+                    &::before {
+                        content: "\f106";
+                    }
+                }
+                & .menu-dropdown.active + ul {
+                    @include mobile-max-1200 {                        
+                        height: 100%;
+                    }                    
+                }                           
+            }            
+            @include mobile-max-1200 {
+                display: block;
+            }      
+        }
+        @include mobile-max-1200 {
+            // display: none;
+            position: fixed;
+            overflow-y: auto;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background-color: $dark-green;            
+            top: 60px;
+            left: -100%;
+            z-index: 999;
+            @include transitionDuration(0.5s);
+        }
+        &.active {
+            left: 0;            
+        }
+    }
+    &.fixed {
+        position:fixed;
+        top: 0;
+        box-shadow: 0 3px 5px rgba($gray, 0.3);
+        @include transitionDuration(0.3s);
+        z-index: 99;
+        width: 100%;
+        background-color: $white;        
+    }
+}
+#nav-btn {
+    float: right;
+    height: 60px;
+    line-height: 60px;
+    color: $dark-green;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: none;
+    @include mobile-max-1200 {
+        display: block;
+    }
+}

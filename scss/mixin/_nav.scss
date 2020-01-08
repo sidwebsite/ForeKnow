@@ -1,0 +1,12 @@
+@mixin  navHover($skewX,$scaleX) {
+    -o-transform: skewX($skewX) scaleX($scaleX) ;
+    -ms-transform: skewX($skewX) scaleX($scaleX);
+    -webkit-transform: skewX($skewX) scaleX($scaleX);
+    transform: skewX($skewX) scaleX($scaleX);    
+}
+@mixin  navTransition($seconds,$cubic) {
+    -o-transition: $seconds $cubic;
+    -ms-transition: $seconds $cubic;
+    -webkit-transition: $seconds $cubic;
+    transition: $seconds $cubic;
+}

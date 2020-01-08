@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap&subset=chinese-traditional');
+
+body {
+    color: $gray;
+    font-family: 'Noto Sans TC', sans-serif;
+    overflow-x: hidden;
+}
+ a:hover, a:focus {
+     text-decoration: none;
+ }
+.section {
+    padding: 3rem 0;
+}
+// index banner
+.owl-carousel {
+    // item content
+    & .item {
+        & .item-caption {
+            position: absolute;
+            left: 50%;
+            bottom: 6rem;
+            transform: translateX(-50%);
+            z-index: 1;     
+            & .item-content {
+                color: $white;
+                & h2 {
+                    position: relative;
+                    padding: 0.6rem 1rem;
+                    &::before, &::after {
+                        content: '';
+                        color: $white;
+                        position: absolute;
+                        top: 0;                        
+                        width: 5px;
+                        height: 100%;
+                        background-color: $white;
+                    }
+                    &::before {
+                        left: 0;
+                    }
+                    &::after {
+                        right: 0;
+                    }
+                }
+            }       
+        }
+    }    
+    // button
+    & .owl-nav {
+        & .owl-prev, & .owl-next {
+            position: absolute;
+            top: 50%;
+            background: $green !important;
+            transform: translateY(-50%);
+            font-size: 1.2rem !important;
+            color: $white !important;
+            padding: 0.4rem 0.8rem !important;
+        }
+        & .owl-prev {
+            left: 0px;
+        }
+        & .owl-next {
+            right: 0px;
+        }
+    }
+}
+// index-content
+.index-content {
+    width: 85%;
+    padding: 2rem 0;    
+    background-color: $white;
+    position: relative;
+    margin-top: -3rem;
+    z-index: 9;
+    box-shadow: 0px 3px 10px rgba($color: $gray, $alpha: 0.3);
+    transform: scale(1) skewX(160deg);
+    @include transitionDuration(0.5s);
+    // @include transformSkewX(160deg);
+    & h3 {
+        @include transformSkewX(5deg);
+    }
+    & .index-content-text {
+        @include transformSkewX(20deg);
+    }
+    &::before, &::after {
+        content: '';
+        color: $white;
+        position: absolute;                             
+        width: 15px;
+        height: 60%;        
+    }
+    &::before {
+        left: -24px;
+        top: 0;
+        background-color: $orange;
+    }
+    &::after {
+        right: -24px;
+        bottom: 0;
+        background-color: $green;        
+    }
+    &.scale {
+        transform: scale(1.1) skewX(160deg);
+        @include transitionDuration(0.5s);
+    }
+}
+
+// 
+.title-line {
+    position: relative;
+    padding: 1rem 0;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(../images/title-line.png);
+        background-repeat: no-repeat;    
+        background-position: left center;    
+        width: 5px;
+        height: 100%;
+    }
+}
+// specification
+.specification {
+    background-image: url(../images/img2-02.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    & .right-dotted-line {
+        border-right: 3px dotted $white;
+    }
+    & .specification-title {
+        position: relative;
+        color: $white;
+        padding: 0.6rem 1.6rem;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include transformSkewX(150deg);
+            @include bg-gradient($dark-green, $dark-blue);
+        }       
+        & h5 {
+            position: relative;
+        } 
+    }
+    & p {
+        text-shadow: 3px 3px 5px rgba($gray, 0.8);
+        font-size: 1.2rem;
+    }
+    & a {
+        border: 2px solid $white;
+        padding: 0.6rem 1.2rem;
+        color: $white;
+        @include transitionDuration(0.3s);
+        &:hover {
+            background-color: $white;
+            color: $dark-green;
+            @include transitionDuration(0.3s);
+        }
+    }
+}
+// features 
+.features {
+    background-image: url(../images/fk-04.png);
+    background-repeat: repeat;
+    & h2 {
+        position: relative;
+        &::before, &::after {
+            content: '';
+            position: absolute;                             
+            width: 10px;
+            height: 60%;        
+            @include transformSkewX(150deg);
+        }
+        &::before {
+            left: -24px;
+            top: 0;
+            background-color: $orange;
+        }
+        &::after {
+            right: -24px;
+            bottom: 0;
+            background-color: $green;        
+        }        
+    }
+}
+
+// worth
+.worth {
+    & h2 {
+        position: relative;
+        &::before, &::after {
+            content: '';
+            position: absolute;                             
+            width: 10px;
+            height: 3px;  
+            background-color: $gray;
+            top: 50%;
+            transform: translateY(-50%);      
+        }
+        &::before {
+            left: -15px;
+        }
+        &::after {
+            right: -15px;
+        }
+    }
+}
+// go top css 
+#gotop {
+    position: fixed;
+    display: block;
+    background-color: $green;
+    color: $white !important;
+    font-size: 1rem !important;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;   
+    right: 15px;
+    bottom: 15px;
+    opacity: 0.7;
+    @include transitionDuration(0.3s);
+    z-index: 9;
+    &:hover {
+        opacity: 1;
+        @include transitionDuration(0.3s);
+    }
+}
