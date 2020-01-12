@@ -12,6 +12,87 @@
             @include transitionDuration(0.5s);
         }
     }
+    // 
+    & .nav-icon {
+        & ul {            
+            padding-left: 0;
+            & li {
+                display: inline-block;
+                position: relative;                
+                @include transitionDuration(0.3s);
+                &::before {
+                    content: '';
+                    position: absolute;        
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $green;
+                    transform-style: preserve-3d;                        
+                    @include navHover(150deg,0);
+                    @include navTransition(0.3s,ease-in-out);                    
+                }
+                &:hover::before {       
+                    @include navHover(150deg,1);
+                }
+            }
+            & a {
+                position: relative;
+                display: inline-block;
+                padding: 0 0.8rem;
+                height: 60px;
+                line-height: 60px;
+                color: $dark-green;
+                white-space: nowrap;
+                z-index: 2;
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+        // language mobile 
+        & #language-mobile {
+            display: none;
+            position: absolute;              
+            z-index: 99;  
+            top: 70px;
+            left: -15px;
+            & .custom-control-input {
+                &:checked~.custom-control-label {
+                    color: $dark-green;
+                    &::before {
+                        border-color: $dark-green;
+                        background-color: $dark-green;
+                        box-shadow: 0 0 8px rgba($dark-green, 1.0);
+                    }
+                }            
+            }        
+            // & a {
+            //     height: auto;
+            //     line-height: initial;
+            //     padding: 0.7rem 0.5rem;
+            //     color: $gray !important;
+            //     @include transitionDuration(0.3s);
+            //     &:hover {
+            //         color: $dark-green !important;
+            //         @include transitionDuration(0.3s);
+            //     }
+            // }
+            & .language-mobile-title {
+                position: relative;
+                & #language-mobile-close {
+                    position: absolute;
+                    top: 2px;
+                    right: 7px;
+                    color: $gray;
+                }
+            }
+            
+        }
+        @include mobile-max-1200 {
+            display: none;
+        }  
+    }
     & #nav {    
         float: right;   
         & .menu {
@@ -32,7 +113,7 @@
                     @include navTransition(0.3s,ease-in-out);
                     z-index: 1;
                 }
-                &:hover::before {       
+                &:hover::before, &.active::before {       
                     @include navHover(150deg,1);                                   
                 }
                 @include mobile-max-1200 {
@@ -40,6 +121,10 @@
                         background-color: transparent;
                     }
                 }
+                &:hover a, &.active a {
+                    color: $white;
+                }  
+                
             }
             & li {
                 list-style: none;
@@ -87,7 +172,7 @@
                         transform: translateY(-50%);
                         color: $white;
                     }
-                }
+                }                
                 > .menu-dropdown:hover::before {
                     color: $white;
                     @include transitionDuration(0.3s);
@@ -125,6 +210,9 @@
                         overflow: hidden;
                     }
                 }  
+                &:hover .menu-dropdown::before, &.active .menu-dropdown::before {
+                    color: $white;
+                }
                 & .menu-dropdown + ul {
                     @include mobile-max-1200 {
                         height: 0;
@@ -140,7 +228,7 @@
                         height: 100%;
                     }                    
                 }                           
-            }            
+            }
             @include mobile-max-1200 {
                 display: block;
             }      
@@ -183,3 +271,4 @@
         display: block;
     }
 }
+

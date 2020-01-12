@@ -14,7 +14,7 @@
     
 }
 .bg-white {
-    background-color: $dark-green;
+    color: $gray;
 }
 // link color
 @each $name, $color in $color-types {
@@ -73,6 +73,36 @@
         @include transformSkewX(150deg);
         @include transitionDuration(0.3s);
         z-index: -1;
+    }
+    &:hover {
+        color: $white;
+        @include transitionDuration(0.3s);
+    }
+    &:hover::before {
+        background-color: $dark-green;
+        @include transitionDuration(0.3s);
+    } 
+}
+
+.link-skew-green {
+    padding: 0.4rem 1.3rem;
+    position: relative;
+    color: $white;
+    @include transitionDuration(0.3s);
+    &:focus {
+        border: 0;
+        box-shadow: none;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $green;
+        @include transformSkewX(150deg);
+        @include transitionDuration(0.3s);
     }
     &:hover {
         color: $white;

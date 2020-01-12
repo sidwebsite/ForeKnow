@@ -7,7 +7,7 @@ body {
 }
  a:hover, a:focus {
      text-decoration: none;
- }
+}
 .section {
     padding: 3rem 0;
 }
@@ -57,10 +57,10 @@ body {
             padding: 0.4rem 0.8rem !important;
         }
         & .owl-prev {
-            left: 0px;
+            left: 15px;
         }
         & .owl-next {
-            right: 0px;
+            right: 15px;
         }
     }
 }
@@ -72,7 +72,7 @@ body {
     position: relative;
     margin-top: -3rem;
     z-index: 9;
-    box-shadow: 0px 3px 10px rgba($color: $gray, $alpha: 0.3);
+    box-shadow: 0px 3px 10px rgba($gray, 0.3);
     transform: scale(1) skewX(160deg);
     @include transitionDuration(0.5s);
     // @include transformSkewX(160deg);
@@ -223,7 +223,7 @@ body {
     text-align: center;
     line-height: 30px;   
     right: 15px;
-    bottom: 15px;
+    bottom: 27px;
     opacity: 0.7;
     @include transitionDuration(0.3s);
     z-index: 9;
@@ -231,4 +231,11 @@ body {
         opacity: 1;
         @include transitionDuration(0.3s);
     }
+}
+
+// text overflow 
+.text-overflow  {
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

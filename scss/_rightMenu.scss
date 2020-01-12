@@ -1,0 +1,20 @@
+.right-menu {
+    & a {
+        color: $gray;
+        @include transitionDuration(0.3s);
+        position: relative;
+        &:hover, &.active {
+            color: $dark-green;
+            @include transitionDuration(0.3s);   
+            position: relative;
+            &::before {
+                color: $dark-green;
+                content: "\f105";
+                font-family: 'Font Awesome\ 5 Free';
+                font-weight: 900;                
+                margin-right: 5px;
+                @include transitionDuration(0.3s);
+            }
+        }
+    }
+}

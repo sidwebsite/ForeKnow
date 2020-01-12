@@ -1,5 +1,6 @@
 #footer {
     box-shadow: 0 -5px 10px rgba($color: $gray, $alpha: 0.3);
+    border-bottom: 12px solid $orange;
     padding: 3rem 0;
     & .footer-nav {
         & a {

@@ -1,0 +1,20 @@
+.team-title {
+    position: relative;
+    &::before, &::after {
+        content: '';
+        position: absolute;                             
+        width: 10px;
+        height: 60%;        
+        @include transformSkewX(150deg);
+    }
+    &::before {
+        left: -24px;
+        top: 0;
+        background-color: $orange;
+    }
+    &::after {
+        right: -24px;
+        bottom: 0;
+        background-color: $green;        
+    }        
+}
