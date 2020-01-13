@@ -149,7 +149,7 @@
         <section id="banner">
             <div class="owl-carousel owl-theme">
                 <div class="item">
-                    <img src="images/banner1.png" alt="" class="img-fluid">
+                    <img class="owl-lazy"  data-src="images/banner1.png" alt="" class="img-fluid">
                     <div class="item-caption">
                         <div class="item-content animated fadeInUp">
                             <div class="container">
@@ -170,7 +170,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="images/banner02.jpg" alt="" class="img-fluid">
+                    <img class="owl-lazy"  data-src="images/banner02.jpg" alt="" class="img-fluid">
                     <div class="item-caption">
                         <div class="item-content animated fadeInUp">
                             <div class="container">
@@ -188,7 +188,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="images/banner1.png" alt="" class="img-fluid">
+                    <img class="owl-lazy" data-src="images/banner1.png" alt="" class="img-fluid">
                     <div class="item-caption">
                         <div class="item-content animated fadeInUp">
                             <div class="container">
@@ -209,7 +209,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="images/banner03.jpg" alt="" class="img-fluid">
+                    <img class="owl-lazy" data-src="images/banner03.jpg" alt="" class="img-fluid">
                     <div class="item-caption">
                         <div class="item-content animated fadeInUp">
                             <div class="container">
@@ -259,13 +259,13 @@
                         <a href="#" class="link-skew-dark-green d-inline-block ml-3">Read more</a>
                     </div>
                     <div class="col-md-5 wow bounceInRight">
-                        <img src="images/index01.png" alt="" class="img-fluid">                   
+                        <img data-src="images/index01.png" alt="" class="img-fluid lazy">                   
                     </div>
                 </div>
                 <!--  -->
                 <div class="row mb-5">
                     <div class="col-md-5 wow bounceInLeft">
-                        <img src="images/index02.png" alt="" class="img-fluid">
+                        <img data-src="images/index02.png" alt="" class="img-fluid lazy">
                     </div>
                     <div class="col-md-7 wow bounceInRight">
                         <h4 class="pl-3 mb-3 text-dark-green title-line">APT型的駭客手法盛行，<br>專業資安人員也難以察覺!</h4>
@@ -281,17 +281,17 @@
                         <a href="#" class="link-skew-dark-green d-inline-block ml-3">Read more</a>
                     </div>
                     <div class="col-md-5 wow bounceInRight">
-                        <img src="images/index03.png" alt="" class="img-fluid">
+                        <img data-src="images/index03.png" alt="" class="img-fluid lazy">
                     </div>
                 </div>
             </div>
             <!--  -->
-            <section class="section specification">
+            <section class="section specification lazy" data-bg="url(images/img2-02.png)">
                 <div class="container">
                     <div class="row wow flipInX">
                         <div class="col-md-auto">
                             <div class="px-5 right-dotted-line h-100 d-flex align-items-center">
-                                <img src="images/fk-03.png" alt="">
+                                <img data-src="images/fk-03.png" alt="" class="lazy">
                             </div>                            
                         </div>
                         <div class="col">
@@ -357,7 +357,7 @@
                 <div class="row">
                     <!--  -->
                     <div class="col-auto">
-                        <img src="images/fk-05.png" alt="" class="mb-3">
+                        <img data-src="images/fk-05.png" alt="" class="mb-3 lazy">
                         <ul class="list-unstyled">
                             <li>114 台北市內湖區瑞光路318號　02-7720-1888 <a href="#" class="link-orange"  data-toggle="modal" data-target="#map-one">[ 位置地圖 ]</a></li>
                             <li>100 台北市中正區羅斯福路2段100號17樓之1　02-2368-6171 <a href="#" class="link-orange"  data-toggle="modal" data-target="#map-two">[ 位置地圖 ]</a></li>
@@ -472,9 +472,17 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <!-- Bootstrap Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>    
     <!-- owl carousel Plugin -->    
-    <script src="vendor/owlCarouse/owl.carousel.min.js"></script>
+    <script src="vendor/owlCarouse/owl.carousel.min.js"></script>    
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.4.0/dist/lazyload.min.js"></script>
+    <script>
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+            // ... more custom settings?
+        });
+    </script>   
     <!-- wow Plugin -->
     <script src="vendor/wow/wow.min.js"></script>
     <script>

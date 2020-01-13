@@ -79,6 +79,7 @@
         let heroSlider = $('.owl-carousel');
         heroSlider.owlCarousel({
             loop: true,
+            lazyLoad:true,
             items: 1,
             nav: true,
             dots: false,
